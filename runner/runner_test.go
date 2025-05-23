@@ -1,4 +1,4 @@
-package sqlrunner
+package runner
 
 import (
 	"gorm.io/driver/mysql"
@@ -12,7 +12,7 @@ func TestRunSQLFile(t *testing.T) {
 	if err != nil {
 		panic(err)
 	}
-	err = RunSQLFile(db, "user.sql")
+	err = RunSQLFile(db, "../user.sql")
 	if err != nil {
 		t.Fatal(err)
 		return
